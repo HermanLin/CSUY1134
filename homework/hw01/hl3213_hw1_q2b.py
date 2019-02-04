@@ -1,3 +1,7 @@
+#shift(lst, k, s)
+#pre: arr, int, str(default = "left")
+#post: arr
+#shifts numbers in lst k indicies to the respective direction of s
 def shift(lst, k, s = "left"):
     if s == "left":
         for x in range(k):
