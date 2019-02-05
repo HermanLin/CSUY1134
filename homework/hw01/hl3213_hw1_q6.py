@@ -44,9 +44,15 @@ class Vector:
                 result[m] = self[m] * other
             return result
         elif isinstance(other, Vector):
-            return
+            if (len(self) != len(other)):
+                raise ValueError('dimensions must agree')
+            else:
+                result = 0
+                for x in range(len(self)):
+                    result += self[x] * other[x]
+                return result
     
-    def __rmul__(self, other):
+    def __rmul__(other, self):
         return 
     #==========================
     def __eq__(self, other):
