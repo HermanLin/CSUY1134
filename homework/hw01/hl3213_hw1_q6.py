@@ -3,7 +3,7 @@ class Vector:
         if isinstance(d, int):
             self.coords = [0]*d
         elif isinstance(d, list):
-            self.coords = [d[i] for i in range(d)]
+            self.coords = d
     
     def __len__(self):
         return len(self.coords)
@@ -52,8 +52,11 @@ class Vector:
                     result += self[x] * other[x]
                 return result
     
-    def __rmul__(other, self):
-        return 
+    def __rmul__(self, other):
+        result = Vector(len(self))
+        for x in range(len(self)):
+            result[x] = self[x] * other
+        return result
     #==========================
     def __eq__(self, other):
         return self.coords == other.coords
@@ -66,9 +69,3 @@ class Vector:
 
     def __repr__(self):
         return str(self)
-
-
-v1 = Vector(5)
-v1[1] = 10
-v1[-1] = 10
-print(v1)
