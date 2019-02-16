@@ -10,3 +10,7 @@ def fibs(n):
         curr += prev       
         prev = stor 
         n -= 1
+
+
+#for curr in fibs(8):
+#        print(curr, end = ' ')
