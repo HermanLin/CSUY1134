@@ -1,7 +1,7 @@
 def e_approx(n):
-    total = 0
+    total = 1
     facto = 1
-    for x in range(1, n + 1):
+    for x in range(1, n):
         total += 1 / facto
         facto *= x
     return total
@@ -12,4 +12,4 @@ def main():
         approx_str = "{:.15f}".format(curr_approx)
         print("n =", n, "Approximation:", approx_str)
 
-#main()
+main()
