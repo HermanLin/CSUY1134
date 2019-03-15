@@ -4,7 +4,7 @@ def count_lowercase(s, low, high):
         if s[low].islower():
             ctr += 1
     else:
-        count_lowercase(s, low + 1, high)
+        return ctr + count_lowercase(s, low + 1, high)
 
 
 s = "LZibRfVnhi"
