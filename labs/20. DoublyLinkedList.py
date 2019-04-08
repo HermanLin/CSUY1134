@@ -83,4 +83,15 @@ class DoublyLinkedList:
     def __repr__(self):
         return "[" + " <--> ".join([str(item) for item in self]) + "]"
 
+    #LAAAAAAAAAAAAAAAAB 9
+    def __getitem__(self, i):
+        if (self.is_empty() or i > self.size):
+            raise Exception("IndexError")
+        cursor = DoublyLinkedList.Node()
+        
+        if i < self.len() / 2:
+            cursor = self.header
+        else:
+            cursor = self.trailer
+            
 
